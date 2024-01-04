@@ -38,7 +38,7 @@
   --heading-font-size-xs: 18px;
 
   /* nav height */
-  --nav-height: 16px;
+  --nav-height: 0px;
 
   /* Fonts */
   --body-font-family: "Adobe Clean", adobe-clean, "Trebuchet MS", sans-serif;
@@ -395,6 +395,7 @@ main img {
   max-width: 100%;
   width: auto;
   height: auto;
+  padding: 0px;
 }
 
 .icon {
@@ -409,12 +410,12 @@ main img {
 }
 
 main .section {
-  padding: 64px 16px;
+  padding: 0px 0px;
 }
 
 @media (min-width: 600px) {
   main .section {
-    padding: 24px 24px;
+    padding: 0px 0px;
   }
 }
 
