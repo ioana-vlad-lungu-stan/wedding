@@ -13,7 +13,7 @@ main .hero {
   position: relative;
   padding: 4px;
   min-height: 120px;
-  max-height: 120px;
+  max-height: 50%;
 }
 
 main .hero h1 {
