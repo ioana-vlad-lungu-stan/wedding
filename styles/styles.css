@@ -12,16 +12,16 @@
 
  :root {
   /* colors */
-  --link-color: #035fe6;
-  --link-hover-color: #136ff6;
-  --background-color: #fff;
-  --overlay-background-color: #eee;
-  --highlight-background-color: #ccc;
+  --link-color: #9379c2;
+  --link-hover-color: #b19cd7;
+  --background-color: #ede9e3;
+  --overlay-background-color: #ede9e3;
+  --highlight-background-color: #ede9e3;
   --text-color: #000;
 
   /* fonts */
   --body-font-family: roboto, roboto-fallback;
-  --heading-font-family: var(--body-font-family);
+  --heading-font-family: 'Snell Roundhand';
   --fixed-font-family: 'Roboto Mono', menlo, consolas, 'Liberation Mono', monospace;
 
   /* body sizes */
@@ -371,7 +371,7 @@ main input {
   box-sizing: border-box;
   border: 1px solid var(--text-color);
   color: var(--text-color);
-  background-color: var(--background-color);
+  background-color: lavender;
 }
 
 main input:hover {
