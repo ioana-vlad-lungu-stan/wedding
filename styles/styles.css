@@ -12,8 +12,8 @@
 
  :root {
   /* colors */
-  --link-color: #9379c2;
-  --link-hover-color: #b19cd7;
+  --link-color: #4b0082;
+  --link-hover-color: #9874d3;
   --background-color: #ede9e3;
   --overlay-background-color: #ede9e3;
   --highlight-background-color: #ede9e3;
@@ -38,7 +38,7 @@
   --heading-font-size-xs: 18px;
 
   /* nav height */
-  --nav-height: 64px;
+  --nav-height: 16px;
 
   /* Fonts */
   --body-font-family: "Adobe Clean", adobe-clean, "Trebuchet MS", sans-serif;
@@ -170,9 +170,6 @@
   --image-border-radius-xxl: 30px;
   --card-border-radius-l: 12px;
 
-  /* nav */
-  --nav-height: 65px;
-
   /* breadcrumb */
   --breadcrumb-height: 1px;
 
@@ -268,9 +265,7 @@ h4, h5, h6 {
   font-family: var(--heading-font-family);
   font-weight: 600;
   line-height: 1.25;
-  margin-top: 1em;
-  margin-bottom: .5em;
-  scroll-margin: calc(var(--nav-height) + 1em);
+  color: #4b0082;
 }
 
 h1 { font-size: var(--heading-font-size-xxl) }
