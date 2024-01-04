@@ -393,7 +393,7 @@ main blockquote p::after {
 
 main img {
   max-width: 100%;
-  width: auto;
+  width: 100%;
   height: auto;
   padding: 0px;
 }
@@ -421,8 +421,8 @@ main .section {
 
 @media (min-width: 900px) {
   .section > div {
-    max-width: 1200px;
-    margin: auto;
+    max-width: 100%;
+    margin: 64px;
   }
 }
 
