@@ -6,6 +6,7 @@ main .hero-container > div {
   
 main .hero-container {
   padding: 0;
+  margin: 0;
 }
   
 main .hero {
@@ -29,7 +30,6 @@ main .hero picture {
   bottom: 0;
   right: 0;
   object-fit: cover;
-  box-sizing: border-box;
 }
 
 main .hero img {

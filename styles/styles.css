@@ -245,8 +245,9 @@
 body {
   font-size: var(--body-font-size-m);
   margin: 0;
+  padding: 0;
   font-family: var(--body-font-family);
-  line-height: 1.6;
+  line-height: 1.25;
   color: var(--text-color);
   background-color: var(--background-color);
   display: none;
@@ -264,7 +265,7 @@ h1, h2, h3,
 h4, h5, h6 {
   font-family: var(--heading-font-family);
   font-weight: 600;
-  line-height: 1.25;
+  line-height: 1;
   color: #4b0082;
 }
 
@@ -413,7 +414,7 @@ main .section {
 
 @media (min-width: 600px) {
   main .section {
-    padding: 64px 32px;
+    padding: 24px 24px;
   }
 }
 
