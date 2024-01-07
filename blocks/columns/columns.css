@@ -6,6 +6,7 @@
 .columns img {
   max-height: 200px;
   width: auto;
+  margin: 32px;
 }
 
 .columns > div > div {
