@@ -15,7 +15,7 @@
   --link-color: #4b0082;
   --link-hover-color: #9874d3;
   --background-color: #ede9e3;
-  --overlay-background-color: #ede9e3;
+  --overlay-background-color: white;
   --highlight-background-color: #ede9e3;
   --text-color: #000;
 
@@ -303,7 +303,7 @@ pre {
 
 main pre {
   background-color: var(--overlay-background-color);
-  padding: 1em;
+  padding: 0px;
   border-radius: .25em;
   overflow-x: auto;
   white-space: pre;
@@ -429,5 +429,7 @@ main .section {
 
 /* section metadata */
 main .section.highlight {
-  background-color: var(--highlight-background-color);
+  padding-top: 4px;
+  padding-bottom: 2px;
+  background-image: url(background-image.jpg);
 }
