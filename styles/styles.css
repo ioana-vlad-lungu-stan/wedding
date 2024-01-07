@@ -21,7 +21,7 @@
 
   /* fonts */
   --body-font-family: roboto, roboto-fallback;
-  --heading-font-family: 'Snell Roundhand';
+  --heading-font-family: 'Snell Rolndhand';
   --fixed-font-family: 'Roboto Mono', menlo, consolas, 'Liberation Mono', monospace;
 
   /* body sizes */
@@ -433,5 +433,5 @@ main .section.highlight {
   padding-bottom: 2px;
   padding-left: 16px;
   padding-right: 16px;
-  background-image: url(background-image.jpg);
+  background-image: var(--highlight-background-color);
 }
