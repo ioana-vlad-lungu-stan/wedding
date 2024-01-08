@@ -83,7 +83,7 @@ function createButton(fd) {
         event.preventDefault();
         await submitForm(form);
         ele.hidden = false;
-        ele.innerHTML = "Vǎ mulțumim, înregistrarea a fost efectuatǎ cu succes!"
+        ele.innerHTML = "Vǎ mulțumim, confirmarea a fost trimisǎ cu succes!"
         ele.style.color = "#276221";
         button.disabled = true;
       }
