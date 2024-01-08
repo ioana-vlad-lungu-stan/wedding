@@ -435,9 +435,9 @@ main .section {
     text-align: center !important;
     font-family: var(--heading-font-family);
     }
-  p {
+  /*p {
     text-align: justify !important;
-  }
+  }*/
   }
 
 /* section metadata */
