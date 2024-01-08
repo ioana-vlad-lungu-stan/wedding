@@ -14,14 +14,14 @@
   /* colors */
   --link-color: #4b0082;
   --link-hover-color: #9874d3;
-  --background-color: #ede9e3;
+  --background-color: #D2BFD7;
   --overlay-background-color: white;
-  --highlight-background-color: #ede9e3;
+  --highlight-background-color: #D2BFD7;
   --text-color: #000;
 
   /* fonts */
   --body-font-family: roboto, roboto-fallback;
-  --heading-font-family: 'Great Vibes';
+  --heading-font-family: 'Snell Roundhand', cursive; 
   --fixed-font-family: 'Roboto Mono', menlo, consolas, 'Liberation Mono', monospace;
 
   /* body sizes */
@@ -280,6 +280,7 @@ h6 { font-size: var(--heading-font-size-xs) }
 p, dl, ol, ul, pre, blockquote {
   margin-top: 1em;
   margin-bottom: 1em;
+  font-family: 'American Typewriter', serif;
 }
 
 hr {
@@ -411,12 +412,12 @@ main img {
 }
 
 main .section {
-  padding: 0px 0px;
+  padding: 4px 4px;
 }
 
 @media (min-width: 600px) {
   main .section {
-    padding: 0px 0px;
+    padding: 4px 4px;
   }
 }
 
@@ -431,6 +432,7 @@ main .section {
 @media only screen and (max-width: 767px) {
   h1, h2, h3, h4, h5, h6 {
     text-align: center !important;
+    font-family: var(--heading-font-family)
     }
   }
 
