@@ -5,6 +5,9 @@
   align-items: center;
   text-align: center;
 }
+.columns p {
+  text-align: center;
+}
 
 .columns img {
   max-height: 300px;
