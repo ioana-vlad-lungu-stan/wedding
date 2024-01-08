@@ -45,8 +45,19 @@ async function submitForm(form) {
     },
     body: JSON.stringify({ data: payload }),
   });
-  await resp.text();
-  return payload;
+  return await resp.text();
+}
+
+function checkFormValidity(form) {
+  const nume = form.elements['nume'].value;
+  const participanti = parseInt(form.elements['participanti'].value);
+  const meniuri_standard = parseInt(form.elements['meniuri-standard'].value);
+  const meniuri_copii = parseInt(form.elements['meniuri-copii'].value);
+  const meniuri_veget = parseInt(form.elements['meniuri-veget'].value);
+  if (nume == null || nume == "") return false;
+  if (participanti == 0) return false;
+  if (participanti != meniuri_standard+meniuri_copii+meniuri_veget) return false;
+  return true;
 }
 
 function createButton(fd) {
@@ -57,12 +68,31 @@ function createButton(fd) {
     button.addEventListener('click', async (event) => {
       const form = button.closest('form');
       if (fd.Placeholder) form.dataset.action = fd.Placeholder;
-      if (form.checkValidity()) {
+
+      var ele = document.getElementById("form-message");
+      if (!ele) {
+        var new_ele = document.createElement("div");
+        new_ele.hidden = true;
+        new_ele.setAttribute("id","form-message");
+        new_ele.innerHTML="fffffffffff";
+        form.appendChild(new_ele);
+        ele = new_ele;
+      }
+
+      if (checkFormValidity(form) && form.checkValidity()) {
         event.preventDefault();
-        button.setAttribute('disabled', '');
         await submitForm(form);
-        const redirectTo = fd.Extra;
-        window.location.href = redirectTo;
+        ele.hidden = false;
+        ele.innerHTML = "Vǎ mulțumim, înregistrarea a fost efectuatǎ cu succes!"
+        ele.style.color = "#276221";
+        button.disabled = true;
+      }
+      else {
+        event.preventDefault();
+        ele.hidden = false;
+        ele.innerHTML = "Formularul conține erori! Verificați numele si dacǎ numǎrul de participanți este egal cu numǎrul total de meniuri."
+        ele.style.color = "#9b1003";
+        button.focus = false;
       }
     });
   }
