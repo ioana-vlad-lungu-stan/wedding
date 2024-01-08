@@ -11,6 +11,9 @@
   border: 1px solid var(--highlight-background-color);
   background-color: var(--background-color);
   color: #897663;
+  border-radius: 10%;
+  overflow: hidden;
+  text-align: center;
 }
 
 .cards .cards-card-body {
@@ -23,6 +26,8 @@
 
 .cards .cards-card-body > *:first-child {
   margin-top: 0;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 
 .cards > ul > li img {
