@@ -452,6 +452,6 @@ main .section.highlight {
 
 .nope-button {
   background-color: #897663;
-  position: absolute; right: 16px;
-  margin: 0px;
+  margin-left: auto;
+  display: block;
 }
