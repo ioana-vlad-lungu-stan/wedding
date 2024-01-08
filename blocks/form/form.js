@@ -60,6 +60,14 @@ function checkFormValidity(form) {
   return true;
 }
 
+function checkNoFormValidity(form) {
+  const nume = form.elements['nume'].value;
+  const participanti = parseInt(form.elements['participanti'].value);
+  if (nume == null || nume == "") return false;
+  if (participanti != 0) return false;
+  return true;
+}
+
 function createButton(fd) {
   const button = document.createElement('button');
   button.textContent = fd.Label;
@@ -75,7 +83,6 @@ function createButton(fd) {
           var new_ele = document.createElement("div");
           new_ele.hidden = true;
           new_ele.setAttribute("id","form-message");
-          new_ele.innerHTML="fffffffffff";
           form.appendChild(new_ele);
           ele = new_ele;
         }
@@ -98,6 +105,36 @@ function createButton(fd) {
       });
     } else if (fd.Field == 'nope') {
       button.classList.add('nope-button');
+
+      button.addEventListener('click', async (event) => {
+        const form = button.closest('form');
+        if (fd.Placeholder) form.dataset.action = fd.Placeholder;
+
+        var ele = document.getElementById("form-message");
+        if (!ele) {
+          var new_ele = document.createElement("div");
+          new_ele.hidden = true;
+          new_ele.setAttribute("id","form-message");
+          form.appendChild(new_ele);
+          ele = new_ele;
+        }
+
+        if (checkNoFormValidity(form) && form.checkValidity()) {
+          event.preventDefault();
+          await submitForm(form);
+          ele.hidden = false;
+          ele.innerHTML = "Vǎ mulțumim, rǎspunsul a fost trimis cu succes!"
+          ele.style.color = "#276221";
+          button.disabled = true;
+        }
+        else {
+          event.preventDefault();
+          ele.hidden = false;
+          ele.innerHTML = "Formularul conține erori! Verificați numele si dacǎ numǎrul de participanți este egal cu zero."
+          ele.style.color = "#9b1003";
+          button.focus = false;
+        }
+      });
     }
   }
   return button;
