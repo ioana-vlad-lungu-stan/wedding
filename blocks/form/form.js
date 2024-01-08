@@ -64,37 +64,41 @@ function createButton(fd) {
   const button = document.createElement('button');
   button.textContent = fd.Label;
   button.classList.add('button');
-  if (fd.Type === 'submit') {
-    button.addEventListener('click', async (event) => {
-      const form = button.closest('form');
-      if (fd.Placeholder) form.dataset.action = fd.Placeholder;
+  if (fd.Type === 'submit') {   
+    if (fd.Field == 'trimite') {
+      button.addEventListener('click', async (event) => {
+        const form = button.closest('form');
+        if (fd.Placeholder) form.dataset.action = fd.Placeholder;
 
-      var ele = document.getElementById("form-message");
-      if (!ele) {
-        var new_ele = document.createElement("div");
-        new_ele.hidden = true;
-        new_ele.setAttribute("id","form-message");
-        new_ele.innerHTML="fffffffffff";
-        form.appendChild(new_ele);
-        ele = new_ele;
-      }
+        var ele = document.getElementById("form-message");
+        if (!ele) {
+          var new_ele = document.createElement("div");
+          new_ele.hidden = true;
+          new_ele.setAttribute("id","form-message");
+          new_ele.innerHTML="fffffffffff";
+          form.appendChild(new_ele);
+          ele = new_ele;
+        }
 
-      if (checkFormValidity(form) && form.checkValidity()) {
-        event.preventDefault();
-        await submitForm(form);
-        ele.hidden = false;
-        ele.innerHTML = "Vǎ mulțumim, confirmarea a fost trimisǎ cu succes!"
-        ele.style.color = "#276221";
-        button.disabled = true;
-      }
-      else {
-        event.preventDefault();
-        ele.hidden = false;
-        ele.innerHTML = "Formularul conține erori! Verificați numele si dacǎ numǎrul de participanți este egal cu numǎrul total de meniuri."
-        ele.style.color = "#9b1003";
-        button.focus = false;
-      }
-    });
+        if (checkFormValidity(form) && form.checkValidity()) {
+          event.preventDefault();
+          await submitForm(form);
+          ele.hidden = false;
+          ele.innerHTML = "Vǎ mulțumim, confirmarea a fost trimisǎ cu succes!"
+          ele.style.color = "#276221";
+          button.disabled = true;
+        }
+        else {
+          event.preventDefault();
+          ele.hidden = false;
+          ele.innerHTML = "Formularul conține erori! Verificați numele si dacǎ numǎrul de participanți este egal cu numǎrul total de meniuri."
+          ele.style.color = "#9b1003";
+          button.focus = false;
+        }
+      });
+    } else if (fd.Field == 'nope') {
+      button.classList.add('nope-button');
+    }
   }
   return button;
 }

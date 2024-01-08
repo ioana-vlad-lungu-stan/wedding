@@ -449,3 +449,9 @@ main .section.highlight {
   padding-right: 16px;
   background-image: url(image.jpg);
 }
+
+.nope-button {
+  background-color: #897663;
+  position: absolute; right: 16px;
+  margin: 0px;
+}
